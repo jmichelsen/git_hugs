@@ -1,0 +1,10 @@
+{
+  "jmichelsen/git_hugs": {
+    "path": "/home/pi/projects/git_hugs",
+    "action": [
+      [
+        "git", "pull", "origin", "master"
+      ]
+    ]
+  }
+}

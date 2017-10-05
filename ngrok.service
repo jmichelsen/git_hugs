@@ -1,0 +1,16 @@
+[Unit]
+Description=ngrok daemon
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/git_hugs
+ExecStart=/home/pi/git_hugs/ngrok http 80
+
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+
+[Install]
+WantedBy=multi-user.target

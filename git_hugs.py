@@ -26,7 +26,7 @@ class PullPostHandler(object):
     def process_request(self):
         """ Gets and fires the request handler """
         event_handler = getattr(self, '_{}_event'.format(
-            self.request.headers.get(GITHUB_EVENT_HEADER)), '_invalid_event')
+            self.request.headers.get(GITHUB_EVENT_HEADER)), self._invalid_event)
         return event_handler()
 
     def _push_event(self):
